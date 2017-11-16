@@ -15,16 +15,19 @@ import java.util.List;
 public class Lambda_04_Test {
 
 	// tag::interfaces[]
+	@FunctionalInterface
 	interface GenericPredicate<T> {
 		// TODO
 		boolean test(T t);
 	}
-
+	
+	@FunctionalInterface
 	interface GenericMapper<T, E> {
 		// TODO
 		E mapper(T t);
 	}
-
+	
+	@FunctionalInterface
 	interface Processor<T> {
 		// TODO
 		void process(T t);
