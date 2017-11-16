@@ -15,7 +15,7 @@ import java.util.stream.Collectors;
 public class Lambda_01_Test {
 
 	// tag::PersonPredicate[]
-	@FunctionalInterface  // => interface fonctionnelle = une seule methode abstraite
+	@FunctionalInterface // => interface fonctionnelle = une seule methode abstraite
 	interface PersonPredicate {
 		boolean test(Person p);
 	}
@@ -35,7 +35,7 @@ public class Lambda_01_Test {
 		List<Person> personList = Data.buildPersonList(100);
 
 		// TODO result ne doit contenir que des personnes adultes (age >= 18)
-		List<Person> result = filter(personList, (Person p) -> p.getAge() >= 18);
+		List<Person> result = filter(personList, p -> p.getAge() >= 18);
 		assert result.size() == 83;
 		for (Person person : result) {
 			assert person.getAge() > 17;
@@ -50,7 +50,7 @@ public class Lambda_01_Test {
 		List<Person> personList = Data.buildPersonList(100);
 
 		// TODO result ne doit contenir que des personnes dont le prénom est "first_10"
-		List<Person> result = filter(personList, (Person p) -> p.getFirstname().equals("first_10"));
+		List<Person> result = filter(personList, p -> p.getFirstname().equals("first_10"));
 
 		assert result.size() == 1;
 		assert result.get(0).getFirstname().equals("first_10");
@@ -71,7 +71,7 @@ public class Lambda_01_Test {
 		// TODO Pour obtenir le hash d'un mot, utiliser la méthode
 		// DigestUtils.sha512Hex(mot)
 		List<Person> result = filter(personList,
-				(Person p) -> p.getAge() > 49 && DigestUtils.sha512Hex(p.getPassword()).equals(passwordSha512Hex));
+				p -> p.getAge() > 49 && DigestUtils.sha512Hex(p.getPassword()).equals(passwordSha512Hex));
 
 		assert result.size() == 6;
 		for (Person person : result) {
