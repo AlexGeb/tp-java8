@@ -42,7 +42,7 @@ public class Optional_01_Test {
 
         // TODO invoquer la méthode find(List<T> list, Predicate<T> predicate)
         // TODO age == 10
-        Optional<Person> result = Optional.ofNullable(find(personList,p->p.getAge().equals(10)));
+        Optional<Person> result = Optional.of(find(personList,p->p.getAge().equals(10)));
 
         assertThat(result, instanceOf(Optional.class));
         assertThat(result.isPresent(), is(true));
