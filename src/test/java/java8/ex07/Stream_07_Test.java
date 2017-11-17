@@ -27,8 +27,12 @@ public class Stream_07_Test {
     // Soit une structure permettant de stocker le total
     private class Accumulator {
         private long total;
-
-        private void add(long value) {
+        /* o r : private AtomicLong total = new AtomicLong(0);*/
+        /**
+         * syncronized is used here to be threadSafe
+         * @param value
+         */
+        private synchronized void add(long value) {
             total += value;
         }
     }
