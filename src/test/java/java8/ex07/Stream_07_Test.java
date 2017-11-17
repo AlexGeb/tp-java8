@@ -41,6 +41,7 @@ public class Stream_07_Test {
 
         // TODO pour chaque élément de longStream, invoquer la méthode add de l'accumulateur (acc)
         longStream.forEach(l->acc.add(l));
+        System.out.println("not parallel acc : "+acc.total);
         return acc.total;
     }
 
@@ -61,6 +62,7 @@ public class Stream_07_Test {
         Accumulator acc = new Accumulator();
         LongStream longStream = LongStream.rangeClosed(1, n - 1).parallel();
         longStream.forEach(l->acc.add(l));
+        System.out.println("parallel acc : "+acc.total);
         return acc.total;
     }
 
