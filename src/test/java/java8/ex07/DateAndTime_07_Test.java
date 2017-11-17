@@ -31,6 +31,7 @@ public class DateAndTime_07_Test {
 
         LocalDate result = LocalDateTime.ofInstant(instant, ZoneId.of("Europe/Paris")).toLocalDate();
 
+        LocalDate result2 = LocalDate.from(instant.atZone(ZoneId.of("Europe/Paris")));
         // TODO valoriser les différentes variables afin de rendre le test passant
 
         assertThat(result.getYear(), is(2017));
