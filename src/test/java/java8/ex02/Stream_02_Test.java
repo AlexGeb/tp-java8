@@ -3,7 +3,6 @@ package java8.ex02;
 import java8.data.Data;
 import java8.data.domain.Customer;
 import java8.data.domain.Order;
-import java8.data.domain.Pizza;
 import org.junit.Test;
 
 import java.util.Arrays;
@@ -36,8 +35,9 @@ public class Stream_02_Test {
 
 		// TODO calculer les statistiques sur les prix des pizzas vendues
 		// TODO utiliser l'opération summaryStatistics
-		IntSummaryStatistics result = orders.stream().flatMap(o -> o.getPizzas().stream())
-				.collect(Collectors.summarizingInt(p -> p.getPrice()));
+		IntSummaryStatistics result = orders.stream()
+				.flatMap(o -> o.getPizzas().stream())
+				.collect(Collectors.summarizingInt(p->p.getPrice()));
 
 		assertThat(result.getSum(), is(10900L));
 		assertThat(result.getMin(), is(1000));
