@@ -2,13 +2,11 @@ package java8.ex07;
 
 import org.junit.Test;
 
-import java.time.DayOfWeek;
 import java.time.Instant;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.Month;
 import java.time.ZoneId;
-import java.time.ZonedDateTime;
 import java.util.Date;
 
 import static org.hamcrest.CoreMatchers.is;
