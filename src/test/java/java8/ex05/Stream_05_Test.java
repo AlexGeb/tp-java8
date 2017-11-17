@@ -80,7 +80,7 @@ public class Stream_05_Test {
 			Map<String, Integer> result = lines.skip(1).map(l -> {
 				String[] arrayline = l.split(";");
 				return new Naissance(arrayline[1], arrayline[2], Integer.parseInt(arrayline[3]));
-			}).collect(groupingBy(Naissance::getAnnee, Collectors.summingInt(Naissance::getNombre)));
+			}).collect(groupingBy(Naissance::getAnnee, summingInt(Naissance::getNombre)));
 
 			assertThat(result.get("2015"), is(8097));
 			assertThat(result.get("1900"), is(5130));
