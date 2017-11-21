@@ -148,7 +148,6 @@ public class Stream_05_Test {
 		String pizzaNamePriceMin = null;
 
 		assertThat(pizzaNamePriceMin, is("L'indienne"));
-
 	}
 
 	// TODO Optionel
